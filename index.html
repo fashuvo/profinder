@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>ProFinder | Programming With Sakib</title>
+  </head>
+  <body>
+    <div class="loader" style="display: none">
+      <svg>
+        <use href="/icons.svg#icon-loader"></use>
+      </svg>
+    </div>
+    <div class="container">
+      <nav>
+        <div>
+          <ion-icon name="logo-github"></ion-icon>
+          <p>ProFinder</p>
+        </div>
+      </nav>
+
+      <div class="search-users">
+        <form id="search">
+          <div class="search-users__input">
+            <input
+              type="text"
+              name="username"
+              id="findByUsername"
+              placeholder="Search github profiles here..."
+              autocomplete="off"
+            />
+          </div>
+          <div class="search-users__submit">
+            <button>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="notFound" style="display: none">
+        <h1>User not found</h1>
+      </div>
+
+      <div class="user-details">
+        <div class="profile">
+          <img src="" alt="" />
+          <p class="name"></p>
+          <p class="username login"></p>
+          <p class="bio"></p>
+
+          <div class="followers-stars">
+            <p>
+              <ion-icon name="people-outline"></ion-icon>
+              <span class="followers"> </span> followers
+            </p>
+            <span class="dot">·</span>
+            <p><span class="following"> </span> following</p>
+          </div>
+
+          <p class="company">
+            <ion-icon name="business-outline"></ion-icon>
+          </p>
+          <p class="location">
+            <ion-icon name="location-outline"></ion-icon>
+          </p>
+        </div>
+        <div class="repositories">
+          <div class="repositories__heading">
+            <h2>Repositories</h2>
+          </div>
+          <div class="repos">
+            <div class="repo">
+              <div class="repo_name">
+                <a href="#"></a>
+              </div>
+              <p>
+                <span class="circle"></span>
+                <ion-icon name="star-outline"></ion-icon>
+                <ion-icon name="git-branch-outline"></ion-icon>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
