@@ -22,14 +22,25 @@ async function getRepos(profile) {
 document.querySelector("#search").addEventListener("submit", async (e) => {
   e.preventDefault();
   const username = document.querySelector("#findByUsername").value;
-  console.log(username);
 
-  const profile = await getUser(username);
-  const repos = await getRepos(profile);
+  if (username.length > 0) {
+    document.querySelector(".loader").style.display = "block";
+    document.querySelector(".user-details").style.display = "none";
+    document.querySelector(".notFound").style.display = "none";
+    const profile = await getUser(username);
+    document.querySelector(".loader").style.display = "none";
 
-  showProfile(profile);
-  showRepos(repos);
-  console.log(repos);
+    if (profile.message === "Not Found") {
+      document.querySelector(".notFound").style.display = "block";
+    } else {
+      const repos = await getRepos(profile);
+      document.querySelector(".user-details").style.display = "flex";
+
+      showProfile(profile);
+      showRepos(repos);
+    }
+  }
+  document.querySelector("#findByUsername").value = "";
 });
 
 function showRepos(repos) {
